@@ -7,7 +7,7 @@ import {
   Param,
   Delete,
 } from '@nestjs/common';
-import { Roles } from 'src/decorators/roles.decorator';
+import { Roles } from '../decorators/roles.decorator';
 import { CatService } from './cat.service';
 import { CreateCatDto } from './dto/create-cat.dto';
 import { UpdateCatDto } from './dto/update-cat.dto';

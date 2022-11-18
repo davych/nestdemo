@@ -5,9 +5,10 @@ import { AppService } from './app.service';
 import { CatModule } from './cat/cat.module';
 import { RolesGuard } from './guards/roles.guard';
 import { NameModule } from './name/name.module';
+import { EmailModule } from './email/email.module';
 
 @Module({
-  imports: [CatModule, NameModule],
+  imports: [CatModule, NameModule, EmailModule],
   controllers: [AppController],
   providers: [
     {

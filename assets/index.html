@@ -1,4 +1,5 @@
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -34,14 +35,55 @@
     path {
       stroke: #17D4D6;
     }
+
+    #me,
+    #ooop,
+    #davy {
+      color: white;
+      font-size: 5rem;
+      font-weight: bold;
+      position: fixed;
+      top: 0;
+      left: 0;
+    }
   </style>
 </head>
 
 <body>
   <div id="animationWindow">
   </div>
+  <div id="me">
+    我是
+  </div>
+  <div id="davy">
+    戴维
+  </div>
+  <div id="ooop">
+    啊
+  </div>
 </body>
 <script>
+  const w = document.body.clientWidth;
+  const h = document.body.clientHeight;
+
+  function randomX() {
+    return Math.floor(Math.random() * w) + 1;
+  }
+
+  function randomY() {
+    return Math.floor(Math.random() * (h-100)) + 1;
+  }
+
+  function start() {
+    setTimeout(() => {
+      gsap.to("#davy", { x: randomX(), y: randomY(), duration: 1 });
+      gsap.to("#me", { x: randomX(), y: randomY(), duration: 1 });
+      gsap.to("#ooop", { x: randomX(), y: randomY(), duration: 1 });
+      start();
+    }, 200);
+  }
+  start();
+
   LottieScrollTrigger({
     target: "#animationWindow",
     path: "https://assets.codepen.io/35984/tapered_hello.json",
@@ -77,6 +119,7 @@
     });
     return animation;
   }
+
 </script>
 
 </html>
